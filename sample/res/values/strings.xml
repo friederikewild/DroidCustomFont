@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DroidCustomFontDemo</string>
+    <string name="title_activity_main">Font Demo</string>
+
+    <!-- Example texts -->
+    <string name="text_default_regular">Default font regular</string>
+    <string name="text_default_bold">Default font bold</string>
+    <string name="text_style_regular">Bowhouse regular</string>
+    <string name="text_style_bolded">Bowhouse regular + bold (Notice: No change!)</string>
+    <string name="text_style_black">Bowhouse black</string>
+    <string name="text_style_dots">BPdotsUnicase</string>
+    <string name="text_example">THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG. the quick brown fox jumps over the lazy dog. \n1234567890</string>
+
+
+    <!-- Info dialog -->
+    <string name="menu_info">Info</string>
+
+    <string name="text_info">This app demonstrates the usage of the &lt;br />
+        &lt;a href=\"https://github.com/friederikewild/DroidCustomFont\">DroidCustomFont Library&lt;/a>&lt;br />
+        created by Friederike Wild&lt;br />
+        &lt;br />
+        Used Fonts (Both under Creative Commons Licence):&lt;br />
+        Bowhouse Font Family. Created 2013 by PYRS Fontlab Ltd. &lt;br />
+        BPdotsUnicase. Created 2007 by George Triantafyllakos (Backpacker.gr)&lt;br />
+        </string>
+    
+</resources>
