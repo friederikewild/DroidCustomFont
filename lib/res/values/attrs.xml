@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Declare the additional Attributes for the CustomFontTextView -->
+    <declare-styleable name="CustomFontTextView">
+        <attr name="fontname" format="string" /><!-- Font file name to be used as typeface -->
+    </declare-styleable>
+</resources>
