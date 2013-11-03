@@ -9,6 +9,7 @@ Project overview
 * [lib](https://github.com/friederikewild/DroidCustomFont/tree/master/lib) - The library project that can be referenced from an Android project.
 * [sample](https://github.com/friederikewild/DroidCustomFont/tree/master/sample) - An Android demo app that demonstrates how to use the DroidCustomFont.
 
+![Font usage Screenshot](raw/screenshot.png "Font usage Screenshot")
 
 About the idea
 --------------
