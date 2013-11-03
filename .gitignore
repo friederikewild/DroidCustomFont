@@ -13,10 +13,21 @@ bin/
 gen/
 
 # Local configuration file (sdk path, etc)
-local.properties
+/*/local.properties
 
 # User files
 *.keystore
 .DS_Store
+*~
 
+# Android Studio
+.idea/
+.gradle
+/*/out
+/*/*/build
+/*/*/production
+*.iws
+*.swp
+
+# Other version controls
 *.svn
