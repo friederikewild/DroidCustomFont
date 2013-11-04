@@ -16,8 +16,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.devmob.androlib.customfont;
+package de.devmob.android.customfont;
 
+import de.devmob.android.customfont.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;

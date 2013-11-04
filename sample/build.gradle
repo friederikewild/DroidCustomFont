@@ -32,7 +32,7 @@ android {
     }
 
     defaultConfig {
-        packageName "de.devmob.androlib.customfont.demo"
+        packageName "de.devmob.android.customfont.demo"
         versionCode 1
         versionName "1.0.0"
         minSdkVersion 8

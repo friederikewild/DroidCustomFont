@@ -31,7 +31,8 @@ textView.setTypeface(font);
 
 This may be fine for one-time usage as in the watch example. But with the corporate designed app this manual modifcation of each `TextView` is very time-consuming, error-prone and requires an unique id for each `View`, even when it only contains static text.
 
-In addition the layout files do not represent the real font usage and lead to bad readability of the project. Not only is the font name missing from the layouts, but there is another problem hidden: The Android system is not supporting to change the style of a font when using a custom typeface. Applying for example `android:textStyle="bold"` doesn't trigger the expacted font appearance. Instead each `TextView` must be assigned the according typeface e.g. "regular", "light", "bold" of the same font family.
+In addition the layout files do not represent the real font usage and lead to bad readability of the project. Not only is the font name missing from the layouts, but there is another problem hidden: 
+The Android system is not supporting to change the style of a font when using a custom typeface. Applying for example `android:textStyle="bold"` doesn't trigger the expacted font appearance. Instead each `TextView` must be assigned the according typeface e.g. "regular", "light", "bold" of the same font family.
 
 To simplify this process DroidCustomFont was created. 
 
@@ -57,17 +58,22 @@ Import the DroidCustomFont project to your workspace and add a reference to it f
 * Store all needed custom fonts as TTF files in "assets/fonts". At the moment this folder structure is mandatory. This may change in future versions of the library.
 **Important: ** Only include fonts with a suitable license!
 
-* The base element of each layout xml file, that shall use custom fonts needs the app packagename as additional namespace (if not already present). In this example the packagename is "de.devmob.androlib.customfont.demo". The prefix can be chosen as wanted. Through this example "app" is used
-```java
+* The base element of each layout xml file, that shall use custom fonts needs the app package name (not the library one) as additional namespace.
+
+	In [ADT 17.0.0](https://developer.android.com/tools/sdk/eclipse-adt.html) support was added for custom views with custom attributes in libraries using the following 'res-auto' uri that is replaced with the app specific one at build time. Using this variation instead of the package name of the base application also works for a gradle based build setup.
+	
+	The prefix can be chosen as wanted. This example uses "app".
+	
+	```java
 xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res/de.devmob.androlib.customfont.demo"
+xmlns:app="http://schemas.android.com/apk/res-auto"
 ```
 
 * Whenever a `TextView` is needed, use instead the class `CustomFontTextView` from the library . It can be layouted and styled in exactly the same way (except for `android:typeface` and `android:textStyle`).
 
 * To assign a custom typeface via the complete filename use `app:fontname`
 ```java
-<de.devmob.androlib.customfont.CustomFontTextView
+<de.devmob.android.customfont.CustomFontTextView
     app:fontname="bowhouse_regular.ttf"
 ```
 
