@@ -11,6 +11,7 @@ dependencies {
 android {
     compileSdkVersion 18
     buildToolsVersion "18.1.1"
+    compileOptions.encoding "UTF-8"
 
     sourceSets {
         main {
@@ -33,19 +34,43 @@ android {
 
     defaultConfig {
         packageName "de.devmob.android.customfont.demo"
-        versionCode 1
-        versionName "1.0.0"
         minSdkVersion 8
         targetSdkVersion 18
+        versionName project.VERSION_NAME
+        versionCode Integer.parseInt(project.VERSION_CODE)
+    }
+
+    signingConfigs {
+        release
     }
 
     buildTypes {
         debug {
             packageNameSuffix ".debug"
             versionNameSuffix ".d"
+            debuggable true
         }
         release {
             zipAlign true
+
+            runProguard true
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+            proguardFile 'proguard.cfg'
+            signingConfig signingConfigs.release
         }
     }
+}
+
+if (project.hasProperty('releaseFile') &&
+        project.hasProperty('releasePassword') &&
+        project.hasProperty('releaseAlias') &&
+        project.hasProperty('releaseAliasPassword')) {
+    android.signingConfigs.release.storeFile = file(releaseFile)
+    android.signingConfigs.release.storePassword = releasePassword
+    android.signingConfigs.release.keyAlias = releaseAlias
+    android.signingConfigs.release.keyPassword = releaseAliasPassword
+}
+else {
+    println 'Release key information not found.'
+    buildTypes.release.signingConfig = null
 }
