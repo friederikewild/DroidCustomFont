@@ -33,7 +33,7 @@ android {
     }
 
     defaultConfig {
-        packageName "de.devmob.android.customfont.demo"
+        packageName project.DEMO
         minSdkVersion 8
         targetSdkVersion 18
         versionName project.VERSION_NAME
